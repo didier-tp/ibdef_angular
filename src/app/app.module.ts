@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { UtilModule } from '../util/util.module';
 import { MyHeaderComponent } from './my-header/my-header.component';
+import { CommunService } from './commun.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { MyHeaderComponent } from './my-header/my-header.component';
   imports: [
     BrowserModule , FormsModule , UtilModule
   ],
-  providers: [],
+  providers: [ CommunService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
