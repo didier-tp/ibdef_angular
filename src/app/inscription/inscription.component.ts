@@ -35,6 +35,10 @@ export class InscriptionComponent implements OnInit {
       Validators.minLength(10)
     ]);
 
+    this.form.controls['prenom'].setValidators(
+      [Validators.required 
+     ]);
+
     this.form.controls['age'].setValidators(
       [Validators.required ,
         ValidatePositif , Validators.max(150)
