@@ -1,0 +1,11 @@
+ht : <input type="number" [(ngModel)]="calculTva.ht" [class.positif]="calculTva.ht >= 0" 
+                                        [class.negatif]="calculTva.ht < 0" 
+                                        (input)="onCalculer()" /> <br/>
+taux : <input type="number" [(ngModel)]="calculTva.taux" [ngClass]="setCssClasses(calculTva.taux)" 
+            (keyup.enter)="onCalculer()"/> <br/>
+<input type="button" value="calculer" (click)="onCalculer()" /> <br/>
+<div *ngIf="calculTva.tva > 0" >
+tva  : {{calculTva.tva}}  <br/>
+ttc  : {{calculTva.ttc}}  <br/>
+</div>
+
