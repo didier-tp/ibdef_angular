@@ -1,0 +1,35 @@
+<form #formXy="ngForm" [hidden]="submitted"
+    (mouseenter)="onFormInit()"  >
+
+  <label for="nom">nom: </label>
+  <input [(ngModel)]="client.nom"  name="nom" required/> <br/>
+
+
+  <label for="prenom">prenom: </label>
+  <input [(ngModel)]="client.prenom"
+               name="prenom" required/> <br/>
+  
+
+  <label for="telephone">telephone: </label>
+  <input [(ngModel)]="client.telephone" required
+           name="telephone" /> <br/>
+ 
+
+ <label for="age">age: </label>
+  <input [(ngModel)]="client.age" type="number" 
+             name="age" required/> <br/>
+  
+
+  <label for="email">email: </label>
+  <input [(ngModel)]="client.email" 
+           name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/> <br/>
+ 
+     
+    <input type="button" class="btn btn-primary" (click)="onSubmit()"
+            value="submit"
+            [disabled]="!formXy.form.valid" /> <br/>
+</form>
+<div [hidden]="!submitted">
+   client : {{client | json }} <br/>
+   <input type="button" (click)="onResetForm()" value="reset" />
+</div>
