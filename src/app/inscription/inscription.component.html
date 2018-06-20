@@ -1,3 +1,13 @@
+<input type="button" value="rechercher clients"
+       (click)="onSearchClients" /> <br/>
+<table border="1">
+  <tr><th>prenom</th><th>nom</th><th>age</th></tr>
+  <tr *ngFor="let c of tabClients">
+      <td>{{c.prenom}}</td><td>{{c.nom}}</td><td>{{c.age}}</td>
+  </tr>
+</table>
+
+<hr/>
 <form #formXy="ngForm" [hidden]="submitted"
     (mouseenter)="onFormInit()"  >
 
