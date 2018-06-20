@@ -12,8 +12,13 @@ export class TvaComponent implements OnInit {
   private traduction : object; // {{ traduction['compute'] }}
 
   constructor(private _communService  : CommunService) { 
+    //l'appel ci dessous à .subscribe() sur un behaviorSubject observable
+    //permet d'enregistrer une callback (codé ici sous forme de lambda)
+    //qui sera automatiquement (ré-)appelée dès qu'un appel à .bsCurrentTrad.next()
+    //sera effectué quelquepart dans l'application .
     _communService.bsCurrentTrad.subscribe( 
-                (newCurrentTrad) => { this.traduction = newCurrentTrad;  } 
+                (newCurrentTrad) => { this.traduction = newCurrentTrad; 
+                              console.log("newCurrentTrad=" + JSON.stringify(newCurrentTrad)); } 
               ); 
 
   }
