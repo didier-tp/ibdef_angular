@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CalculTva } from './calcul-tva';
+import { CommunService } from '../commun.service';
 
 @Component({
   selector: 'app-tva',
@@ -7,6 +8,15 @@ import { CalculTva } from './calcul-tva';
   styleUrls: ['./tva.component.css']
 })
 export class TvaComponent implements OnInit {
+
+  private traduction : object; // {{ traduction['compute'] }}
+
+  constructor(private _communService  : CommunService) { 
+    _communService.bsCurrentTrad.subscribe( 
+                (newCurrentTrad) => { this.traduction = newCurrentTrad;  } 
+              ); 
+
+  }
 
   calculTva : CalculTva = new CalculTva();
 
@@ -21,7 +31,7 @@ export class TvaComponent implements OnInit {
       }
   }
 
-  constructor() { }
+ 
 
   ngOnInit() {
   }
