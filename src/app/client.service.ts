@@ -20,13 +20,13 @@ export class ClientService {
     return this._http.get<Client[]>(inscriptionUrl );
     }
 
-    private _headers = new HttpHeaders({'Content-Type': 'application/json'});
+    //private _headers = new HttpHeaders({'Content-Type': 'application/json'});
 
     public postInscriptionsObservable(cli : Client):Observable<Client> {
       let inscriptionUrl : string = "./tp/inscription" ; //avec ng serve --proxy-config proxy.conf.json
-      return this._http.post<Client>(inscriptionUrl ,
+      return this._http.post<Client>(inscriptionUrl , cli/*
                                      JSON.stringify(cli) ,
-                                    {headers: this._headers});
+                                     {headers: this._headers}*/);
       } 
 
 }
