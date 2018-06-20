@@ -10,6 +10,8 @@ import { MyHeaderComponent } from './my-header/my-header.component';
 import { CommunService } from './commun.service';
 import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { RouterModule } from '@angular/router';
+import { Partie2Component } from './partie2/partie2.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,12 @@ import { WelcomeComponent } from './welcome/welcome.component';
     WelcomeComponent
   ],
   imports: [
-    BrowserModule , FormsModule , UtilModule , HttpClientModule
+    BrowserModule , FormsModule , UtilModule , HttpClientModule ,
+    RouterModule.forRoot([
+      { path: 'welcome', component: WelcomeComponent },
+      { path: '', redirectTo: '/welcome', pathMatch: 'full'},
+      { path: 'partie2', component: Partie2Component }
+      ])
   ],
   providers: [ CommunService],
   bootstrap: [AppComponent]
