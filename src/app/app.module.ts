@@ -29,7 +29,12 @@ import { ListeProdComponent } from './partie2/liste-prod/liste-prod.component';
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: '/welcome', pathMatch: 'full'},
-      { path: 'partie2', component: Partie2Component }
+      { path: 'partie2', component: Partie2Component ,
+      children: [
+        { path: 'prodList/:categorie', component: ListeProdComponent },
+        { path: '', redirectTo: 'prodList/promo', pathMatch: 'prefix'}
+        ]
+       }
       ])
   ],
   providers: [ CommunService],
