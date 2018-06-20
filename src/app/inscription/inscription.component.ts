@@ -15,9 +15,15 @@ export class InscriptionComponent implements OnInit {
 
   client : Client = new Client();
   submitted: boolean = false;
+
   onSubmit(){
     this.submitted = true;
-   //futur envoi via appel WS REST en post
+    this._clientService.postInscriptionsObservable(this.client)
+              .subscribe( (clientEnregistre) => { this.client = clientEnregistre;
+                                                  this.onSearchClients(); } ,
+                          (error)  => console.log(error)
+                         );
+                       
   }
 
   tabClients : Client[] = []; //à afficher coté html dans tableau via *ngFor
