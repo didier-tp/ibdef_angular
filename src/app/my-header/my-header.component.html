@@ -1,3 +1,7 @@
 `<h3>MyHeader of {{titre}} .. {{fixedValue}}</h3>
-date:{{date  | date:"dd/MM/yyyy" }}
+date:{{date  | date:"dd/MM/yyyy" }} langue:
+<select [(ngModel)]="langue">
+    <option value="en">englais</option>
+    <option value="fr">francais</option>
+</select>
 <hr/>
