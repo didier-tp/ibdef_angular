@@ -31,7 +31,7 @@ import { ListeProdComponent } from './partie2/liste-prod/liste-prod.component';
       { path: '', redirectTo: '/welcome', pathMatch: 'full'},
       { path: 'partie2', component: Partie2Component ,
       children: [
-        { path: 'prodList/:categorie', component: ListeProdComponent },
+        { path: 'listeProd/:categorie', component: ListeProdComponent },
         { path: '', redirectTo: 'prodList/promo', pathMatch: 'prefix'}
         ]
        }
