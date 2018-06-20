@@ -18,7 +18,7 @@ export class TvaComponent implements OnInit {
     //sera effectué quelquepart dans l'application .
     _communService.bsCurrentTrad.subscribe( 
                 (newCurrentTrad) => { this.traduction = newCurrentTrad; 
-                              console.log("newCurrentTrad=" + JSON.stringify(newCurrentTrad)); } 
+                   console.log("newCurrentTrad=" + JSON.stringify(newCurrentTrad)); } 
               ); 
 
   }
