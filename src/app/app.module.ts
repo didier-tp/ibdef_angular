@@ -9,13 +9,15 @@ import { UtilModule } from '../util/util.module';
 import { MyHeaderComponent } from './my-header/my-header.component';
 import { CommunService } from './commun.service';
 import { HttpClientModule } from '@angular/common/http';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TvaComponent,
     InscriptionComponent,
-    MyHeaderComponent
+    MyHeaderComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule , FormsModule , UtilModule , HttpClientModule

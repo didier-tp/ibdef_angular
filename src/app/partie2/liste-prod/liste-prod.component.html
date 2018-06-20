@@ -1,0 +1,7 @@
+<h4> produits de la categorie {{categorie}}</h4>
+<table border="1">
+  <tr> <th>nom</th> <th>prix</th></tr>
+  <tr *ngFor="let p of produits"> 
+     <td>{{p.name}}</td> <td>{{p.prix}}</td>
+  </tr>
+</table>
