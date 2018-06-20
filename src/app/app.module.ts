@@ -8,6 +8,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { UtilModule } from '../util/util.module';
 import { MyHeaderComponent } from './my-header/my-header.component';
 import { CommunService } from './commun.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { CommunService } from './commun.service';
     MyHeaderComponent
   ],
   imports: [
-    BrowserModule , FormsModule , UtilModule
+    BrowserModule , FormsModule , UtilModule , HttpClientModule
   ],
   providers: [ CommunService],
   bootstrap: [AppComponent]
