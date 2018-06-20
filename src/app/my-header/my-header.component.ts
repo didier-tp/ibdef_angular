@@ -8,6 +8,18 @@ import { CommunService } from '../commun.service';
 })
 export class MyHeaderComponent implements OnInit {
 
+  constructor(private _communService  : CommunService){
+    this.date = new Date();
+  }
+
+langue : string = "en";
+
+onLangueChange(){
+   //this.langue  sera maj via [(ngModel)]="langue"
+   //le set langue() sera appelé sur ._communService
+   this._communService.langue = this.langue;
+}
+
 @Input()
 titre : string;
 
@@ -16,9 +28,7 @@ fixedValue : string;
 
 date: Date ;
 
-constructor(private _communService  : CommunService){
-  this.date = new Date();
-}
+
 
 
 
