@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { RouterModule } from '@angular/router';
 import { Partie2Component } from './partie2/partie2.component';
+import { ListeProdComponent } from './partie2/liste-prod/liste-prod.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { Partie2Component } from './partie2/partie2.component';
     TvaComponent,
     InscriptionComponent,
     MyHeaderComponent,
-    WelcomeComponent
+    WelcomeComponent ,
+    Partie2Component,
+    ListeProdComponent
   ],
   imports: [
     BrowserModule , FormsModule , UtilModule , HttpClientModule ,
