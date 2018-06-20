@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Client } from '../client';
 import { NgForm, Validators } from '@angular/forms';
 import { ValidatePositif } from '../positif.validator';
+import { ClientService } from '../client.service';
 
 @Component({
   selector: 'app-inscription',
@@ -19,7 +20,17 @@ export class InscriptionComponent implements OnInit {
    //futur envoi via appel WS REST en post
   }
 
-  constructor() { }
+  tabClients : Client[] = []; //à afficher coté html dans tableau via *ngFor
+
+  constructor(private _clientService : ClientService) { }
+
+  // (click)="onSearchClients()"
+  onSearchClients(){
+    this._clientService.getTabInscriptionsObservable()
+            .subscribe( (tabInscription) => { this.tabClients = tabInscription; } ,
+                        (error)  => console.log(error)
+                      );
+  }
 
   ngOnInit() {
   }
@@ -38,6 +49,7 @@ export class InscriptionComponent implements OnInit {
     this.form.controls['prenom'].setValidators(
       [Validators.required 
      ]);
+
 
     this.form.controls['age'].setValidators(
       [Validators.required ,
